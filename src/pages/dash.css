@@ -1,0 +1,297 @@
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bi {
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+}
+
+/* Style général du dashboard */
+.dashboard-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding: 0.75rem;
+}
+
+.dashboard-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Ajustements pour grands écrans */
+@media (min-width: 1600px) {
+  .dashboard-content {
+    max-width: 1700px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .dashboard-content {
+    max-width: 1900px;
+  }
+}
+
+.dashboard-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+/* Cartes */
+.dashboard-card {
+  width: 100%;
+  height: 100px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card .card-body {
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Couleurs spécifiques pour chaque carte */
+.dashboard-card.affaires-en-cours {
+  border-left: 4px solid #007bff;
+  background-color: #e6f0ff;
+}
+
+.dashboard-card.affaires-terminees {
+  border-left: 4px solid #28a745;
+  background-color: #e6ffe6;
+}
+
+.dashboard-card.total-montant {
+  border-left: 4px solid #17a2b8;
+  background-color: #e6faff;
+}
+
+.dashboard-card.rendez-vous-actuels {
+  border-left: 4px solid #ffc107;
+  background-color: #fff8e6;
+}
+
+.dashboard-card.nouveaux-affaires {
+  border-left: 4px solid #6c757d;
+  background-color: #f5f5f5;
+}
+
+.dashboard-card .card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.dashboard-stat {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* En-têtes des cartes (pour tableaux) */
+.card-header {
+  background-color: #272727; /* Sombre, cohérent avec le thème */
+  color: #ffffff;
+  font-size: 1rem; /* Réduit pour compacité */
+  font-weight: 600;
+  padding: 0.6rem; /* Réduit pour compacité */
+  border-top-left-radius: 8px; /* Coins arrondis */
+  border-top-right-radius: 8px;
+  text-align: center;
+  text-transform: uppercase; /* Style moderne */
+  letter-spacing: 0.03rem;
+}
+
+/* Couleurs spécifiques pour les en-têtes des tableaux */
+.card-header.avocats-disponibles {
+  border-left: 4px solid #007bff; /* Bleu pour avocats */
+}
+
+.card-header.rendez-vous-actuels {
+  border-left: 4px solid #ffc107; /* Jaune pour rendez-vous */
+}
+
+/* Tableaux */
+.dashboard-table {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-size: 0.8rem; /* Réduit pour compacité */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e0e0e0; /* Bordure subtile */
+}
+
+.dashboard-table.avocats-disponibles {
+  border-left: 4px solid #007bff; /* Bleu pour avocats */
+}
+
+.dashboard-table.rendez-vous-actuels {
+  border-left: 4px solid #ffc107; /* Jaune pour rendez-vous */
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 0.35rem; /* Réduit pour compacité */
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #e0e0e0; /* Bordure légère */
+}
+
+.dashboard-table th {
+  background-color: #272727;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem; /* Réduit légèrement */
+  padding: 0.5rem;
+}
+
+.dashboard-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.dashboard-table tbody tr:hover {
+  background-color: #f5f5f5; /* Hover léger */
+}
+
+/* Custom toast styling */
+.custom-toast-error {
+  background-color: #dc3545 !important;
+  color: #fff !important;
+  border-radius: 6px;
+}
+
+.custom-toast-error .Toastify__toast-body {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+/* Modal styling */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .dashboard-card {
+    height: 90px;
+  }
+
+  .dashboard-card .card-title {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-stat {
+    font-size: 1.2rem;
+  }
+
+  .card-header {
+    font-size: 0.95rem;
+  }
+
+  .dashboard-table {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0.5rem;
+  }
+
+  .dashboard-content {
+    padding: 0.5rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.2rem;
+  }
+
+  .dashboard-card {
+    height: 80px;
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-card .card-title {
+    font-size: 0.85rem;
+  }
+
+  .dashboard-stat {
+    font-size: 1rem;
+  }
+
+  .card-header {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .dashboard-table {
+    font-size: 0.7rem;
+    display: block; /* Permet le défilement horizontal */
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 0.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard-card {
+    margin-bottom: 0.75rem;
+  }
+
+  .dashboard-table {
+    font-size: 0.65rem;
+  }
+
+  .card-header {
+    font-size: 0.85rem;
+  }
+}
