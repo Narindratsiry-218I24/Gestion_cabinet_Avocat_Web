@@ -9,8 +9,8 @@ node_modules/
 .env.test
 
 # Build
-build/
 dist/
+Build/
 
 # Logs
 *.log
